@@ -1,0 +1,43 @@
+ikraceya-sih26034/
+├── requirements.txt
+├── .env.example              # DB creds template — real .env goes in .gitignore, never commit it
+├── .gitignore
+├── README.md
+├── app/
+│   ├── Home.py                # Streamlit entry point (login + landing)
+│   ├── pages/
+│   │   ├── 1_Persona_Selection.py
+│   │   ├── 2_Scan.py           # file_uploader + camera_input
+│   │   ├── 3_Results.py
+│   │   └── 4_History.py
+│   ├── components/
+│   │   └── sidebar.py
+│   ├── auth/
+│   │   ├── __init__.py
+│   │   └── auth_handler.py     # login/signup, bcrypt hashing, session state
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── database.py         # SQLAlchemy engine/session setup
+│   │   ├── models.py           # users, scan_logs ORM models
+│   │   └── crud.py             # insert/query helper functions
+│   ├── pipeline/
+│   │   ├── __init__.py
+│   │   ├── preprocess.py       # OpenCV: grayscale, contrast, threshold, deskew
+│   │   ├── ocr_engine.py       # PaddleOCR wrapper — text + bounding boxes
+│   │   ├── field_matcher.py    # RapidFuzz — locate MRP, net qty, mfg date, etc.
+│   │   ├── field_parser.py     # spaCy/regex — clean extracted values
+│   │   └── normalizer.py       # dateparser + quantulum3
+│   ├── rules/
+│   │   ├── __init__.py
+│   │   ├── rule_table.py       # loads rule definitions (data-driven, not hardcoded)
+│   │   ├── rule_definitions.json  # the ~40 rules from your spec doc, as data
+│   │   └── rule_engine.py      # runs each rule fn against parsed fields → PASS/FAIL/N_A
+│   └── utils/
+│       ├── __init__.py
+│       └── json_schema.py      # builds the scan_logs JSON blobs
+├── scripts/
+│   └── init_db.py              # creates MySQL tables from models.py (run once)
+└── tests/
+    ├── test_rule_engine.py
+    ├── test_pipeline.py
+    └── sample_images/           # a few label photos for manual testing

@@ -1,0 +1,34 @@
+# SIH26034 — Ikraceya | Legal Metrology Compliance Checker
+# Tested target: Python 3.12.9
+# Install with: pip install -r requirements.txt
+
+# --- Web frontend ---
+streamlit==1.38.0
+
+# --- Image handling / preprocessing ---
+opencv-python==4.10.0.84
+numpy==1.26.4
+Pillow==10.4.0
+
+# --- OCR ---
+paddlepaddle==2.6.2
+paddleocr==2.8.1
+
+# --- Fuzzy matching / NLP / parsing ---
+rapidfuzz==3.9.7
+spacy==3.7.6
+dateparser==1.2.0
+quantulum3==0.9.0
+
+# --- Database ---
+SQLAlchemy==2.0.35
+mysql-connector-python==9.0.0
+pandas==2.2.2
+
+# --- Auth / security ---
+bcrypt==4.2.0
+passlib==1.7.4
+python-dotenv==1.0.1
+
+# --- After install, run this once (spaCy model is not on PyPI as a normal dep) ---
+# python -m spacy download en_core_web_sm
