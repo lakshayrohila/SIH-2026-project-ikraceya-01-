@@ -42,6 +42,7 @@ status_colors = {
     "NON_COMPLIANT": "error",
     "PARTIAL": "warning",
     "OUT_OF_SCOPE": "info",
+    "PENDING_RULE_ENGINE": "info",
 }
 getattr(st, status_colors.get(status, "info"))(f"Overall status: **{status}**")
 

@@ -1,0 +1,97 @@
+{
+  "rule_version": "LM(PC) Rules 2011, as amended up to 2012 (GSR 748(E) & GSR 734(E))",
+
+  "auto_rules": [
+    {
+      "rule_id": "DECL-1",
+      "section": "Mandatory Declarations",
+      "rule_ref": "6(1)(a)",
+      "description": "Name & address of manufacturer (and packer/importer if applicable) must be present on the label.",
+      "check_type": "field_present",
+      "field": "manufacturer_name_address"
+    },
+    {
+      "rule_id": "DECL-3",
+      "section": "Mandatory Declarations",
+      "rule_ref": "6(1)(c)",
+      "description": "Net quantity (weight/measure/number) must be declared.",
+      "check_type": "field_present",
+      "field": "net_quantity"
+    },
+    {
+      "rule_id": "DECL-4",
+      "section": "Mandatory Declarations",
+      "rule_ref": "6(1)(d)",
+      "description": "Month & year of manufacture/pre-packing/import must be declared.",
+      "check_type": "field_present",
+      "field": "mfg_date"
+    },
+    {
+      "rule_id": "DECL-5",
+      "section": "Mandatory Declarations",
+      "rule_ref": "6(1)(e)",
+      "description": "Retail Sale Price (MRP) must be declared.",
+      "check_type": "field_present",
+      "field": "mrp"
+    },
+    {
+      "rule_id": "DECL-7",
+      "section": "Mandatory Declarations",
+      "rule_ref": "6(2)",
+      "description": "Consumer care details (phone or email for complaints) must be present.",
+      "check_type": "field_present",
+      "field": "consumer_care"
+    },
+    {
+      "rule_id": "MRP-FORMAT",
+      "section": "MRP Format",
+      "rule_ref": "2(m)",
+      "description": "MRP declaration should include 'inclusive of all taxes' phrasing.",
+      "check_type": "text_contains",
+      "keywords": ["inclusive of all taxes", "incl. of all taxes", "incl of all taxes"]
+    },
+    {
+      "rule_id": "QTY-3",
+      "section": "Net Quantity Rules",
+      "rule_ref": "12(6)",
+      "description": "Quantity declaration must not use misleading qualifiers.",
+      "check_type": "keyword_absence",
+      "keywords": ["about", "approximately", "minimum", "not less than", "average"]
+    },
+    {
+      "rule_id": "QTY-6",
+      "section": "Net Quantity Rules",
+      "rule_ref": "13(4)",
+      "description": "Quantity must not be stated using words like dozen, score, gross, great gross.",
+      "check_type": "keyword_absence",
+      "keywords": ["dozen", "score", "gross", "great gross"]
+    }
+  ],
+
+  "manual_only_rules": [
+    {
+      "rule_id": "FONT-CHECK",
+      "section": "Font Size / Readability",
+      "rule_ref": "Rule 7",
+      "description": "Numeral height, width ratio, and colour-contrast checks require a physical reference scale — not reliably scannable from a phone photo alone. Requires manual/physical inspection."
+    },
+    {
+      "rule_id": "MPE-CHECK",
+      "section": "Maximum Permissible Error",
+      "rule_ref": "First Schedule",
+      "description": "Verifying actual fill quantity against declared quantity requires lab measurement, not a photo. Requires manual/physical inspection."
+    },
+    {
+      "rule_id": "PRICE-REVISION",
+      "section": "Price Revision",
+      "rule_ref": "Rule 18(3)",
+      "description": "Tax-revision pricing compliance requires cross-checking manufacturer's published revision notices — not scannable from the label alone. Requires manual/officer review."
+    },
+    {
+      "rule_id": "PENALTIES",
+      "section": "Penalties",
+      "rule_ref": "Rule 32",
+      "description": "Penalty determination is an enforcement action taken by an officer after violations are confirmed, not an automated check."
+    }
+  ]
+}
