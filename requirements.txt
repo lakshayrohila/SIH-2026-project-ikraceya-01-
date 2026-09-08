@@ -6,7 +6,7 @@
 streamlit==1.38.0
 
 # --- Image handling / preprocessing ---
-opencv-python==4.10.0.84
+opencv-python-headless
 numpy==1.26.4
 Pillow==10.4.0
 
@@ -33,7 +33,7 @@ python-dotenv==1.0.1
 
 # --- Testing ---
 pytest==8.3.3
- 
+
 
 # --- After install, run this once (spaCy model is not on PyPI as a normal dep) ---
 # python -m spacy download en_core_web_sm
