@@ -3,6 +3,13 @@ Home.py — Streamlit entry point.
 Run with: streamlit run app/Home.py
 """
 
+import sys
+import os
+
+# Streamlit only adds this file's own folder (app/) to sys.path, not the
+# project root above it — so "from app.auth..." would fail without this.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import streamlit as st
 
 from app.auth.auth_handler import login_user, signup_user, logout_user

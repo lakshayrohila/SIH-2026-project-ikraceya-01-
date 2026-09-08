@@ -30,5 +30,10 @@ bcrypt==4.2.0
 passlib==1.7.4
 python-dotenv==1.0.1
 
+
+# --- Testing ---
+pytest==8.3.3
+ 
+
 # --- After install, run this once (spaCy model is not on PyPI as a normal dep) ---
 # python -m spacy download en_core_web_sm

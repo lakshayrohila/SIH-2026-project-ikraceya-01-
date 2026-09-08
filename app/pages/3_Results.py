@@ -88,7 +88,7 @@ if not st.session_state.get("scan_logged", False):
         save_scan(
             user_id=st.session_state["user_id"],
             persona=persona,
-            result=result,
+            pipeline_result=result,
         )
         st.session_state["scan_logged"] = True
     except ModuleNotFoundError:
